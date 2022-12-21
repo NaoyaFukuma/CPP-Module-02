@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:27:54 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/12/21 14:53:50 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/12/21 14:17:53 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ Fixed::Fixed(const float n)
 	// std::cout << "Float constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &fixed) : _fixedPointValue(fixed._fixedPointValue)
+Fixed::Fixed(const Fixed &fixed)
 {
 	// std::cout << "Copy constructor called" << std::endl;
+	_fixedPointValue = fixed.getRawBits();
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed)
